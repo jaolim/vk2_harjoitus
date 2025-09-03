@@ -16,28 +16,13 @@ public class FriendlistController {
 
     public static List<Friend> friends = new ArrayList<>();
 
-    /*
-     * static {
-     * friends.add(new Friend("Aku", "Ankka"));
-     * friends.add(new Friend("Iines", "Ankka"));
-     * friends.add(new Friend("Hannu", "Hanhi"));
-     * }
-     */
     @GetMapping("/hello4")
     public String getFriendlist(Model model) {
         model.addAttribute("friends", friends);
         model.addAttribute("friend", new Friend());
         return "friendlist";
     }
-    /*
-     * @GetMapping("/add")
-     * public String addFriend(Model model) {
-     * model.addAttribute("friend", new Friend());
-     * return "add";
-     * }
-     */
 
-     
     @RequestMapping(value = "/saveFriend", method = RequestMethod.POST)
     public String save(Friend friend) {
         friends.add(friend);
