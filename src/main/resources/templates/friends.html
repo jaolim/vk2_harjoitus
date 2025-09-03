@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Week 2, Exercise 3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <p><a th:href="@{/}">Exercise list</a></p>
+    <h1>My friends</h1>
+
+    <ul>
+        <li th:each="friend : ${friends}">
+            <span th:text="${friend}">toString</span>
+        </li>
+    </ul>
+
+    <p><a th:href="@{/add}">Add friend</a></p>
+</body>
+
+</html>

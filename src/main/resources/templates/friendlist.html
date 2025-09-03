@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Week 2, Exercise 3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <p><a th:href="@{/}">Exercise list</a></p>
+    <h1>Friend list</h1>
+
+    <ul>
+        <li th:each="friend : ${friends}">
+            <span th:text="${friend}">toString</span>
+        </li>
+    </ul>
+
+    <h1>Add Friend</h1>
+
+    <div>
+        <form th:object="${friend}" th:action="@{saveFriend}" action="#" method="post">
+            <p>First name: <input type="text" id="firstname" th:field="*{firstName}"/></p>
+            <p>Last name: <input type="text" id="lastname" th:field="*{lastName}" /></p>
+            <input type="submit" value="Add Friend"></input>
+        </form>
+    </div>
+
+</body>
+
+</html>

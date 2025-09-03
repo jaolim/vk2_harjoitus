@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Week 2, Exercise 1</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+  <p><a th:href="@{/}">Exercise list</a></p>
+  <div th:if="${age} &gt; 17" text="'Hello ' + ${name}">
+    <h1 th:text="'Hello ' + ${name}"></h1>
+  </div>
+  <div th:if="${age} &lt; 18">
+    <h1>You're too young.</h1>
+  </div>
+</body>
+
+</html>
